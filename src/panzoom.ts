@@ -166,11 +166,14 @@ function Panzoom(
       const elemHeight = dims.elem.height / scale
       const elemScaledWidth = parentWidth / elemWidth
       const elemScaledHeight = parentHeight / elemHeight
-      if (options.contain === 'inside') {
-        options.maxScale = Math.min(elemScaledWidth, elemScaledHeight)
-      } else if (options.contain === 'outside') {
-        options.minScale = Math.max(elemScaledWidth, elemScaledHeight)
-      }
+      
+      // blankbadge: Allow contain outside to zoom fit the entire image 
+      options.maxScale = Math.min(elemScaledWidth, elemScaledHeight)
+      //if (options.contain === 'inside') {
+      //  options.maxScale = Math.min(elemScaledWidth, elemScaledHeight)
+      //} else if (options.contain === 'outside') {
+      //  options.minScale = Math.max(elemScaledWidth, elemScaledHeight)
+      //}
     }
   }
 
